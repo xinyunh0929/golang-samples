@@ -1,8 +1,9 @@
-// Copyright 2016 Google Inc. All rights reserved.
+// Copyright 2018 Google Inc. All rights reserved.
 // Use of this source code is governed by the Apache 2.0
 // license that can be found in the LICENSE file.
 
 // [START quick_start]
+
 package main
 
 import (
@@ -35,9 +36,12 @@ func main() {
 		log.Fatalf("Failed to list Companies: %v", err)
 	}
 
+    // Print the request id.
+	fmt.Printf("Request ID: %q\n", response.Metadata.RequestId)
+
 	// Print the returned companies.
 	for _, company := range response.Companies {
-		fmt.Printf("================\nCompany:\n%v\n================\n", company)
+		fmt.Printf("Company: %q\n", company.Name)
 	}
 }
 
